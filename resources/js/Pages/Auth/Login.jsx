@@ -119,6 +119,16 @@ export default function Login({ status, canResetPassword }) {
                             </Link>
                         )}
                     </div>
+                    <div className="mt-4 flex items-center justify-between">
+                        {canResetPassword && (
+                            <Link
+                                href={route("register")}
+                                className="text-sm text-blue-600 hover:underline"
+                            >
+                                Don't Have account?
+                            </Link>
+                        )}
+                    </div>
                 </form>
             </div>
         </div>
