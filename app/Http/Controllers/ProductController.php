@@ -11,7 +11,7 @@ class ProductController extends Controller
     {
         // Fetch all products
         $products = Product::all()->map(function ($product) {
-            $product->productImage = asset('storage/app/public/' . $product->productImage); // Generate full URL
+            $product->productImage = asset('storage/' . $product->productImage); // Generate full URL
             return $product;
         });
 
@@ -25,7 +25,7 @@ class ProductController extends Controller
     public function show($id)
 {
     $product               = Product::findOrFail($id);
-$product->productImage = asset('storage/app/public/' . $product->productImage);
+$product->productImage = asset('storage/' . $product->productImage);
 
     return Inertia::render('ProductsDetail', ['product' => $product]);
 }
